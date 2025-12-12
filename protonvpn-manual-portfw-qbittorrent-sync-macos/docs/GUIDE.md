@@ -19,7 +19,7 @@ verás notas con advertencias, soluciones a errores reales y pasos verificados.
 4. [Activación manual de Port Forwarding](#4-️-activación-manual-de-port-forwarding)
 5. [Comando simple corregido](#5--comando-simple-corregido-100-funciona)
 6. [Configuración de qBittorrent](#6-️-configuración-de-qbittorrent)
-7. [Script mejorado para usuarios avanzados](#7--script-mejorado-para-usuarios-avanzados)
+7. [Script simple mejorado para usuarios avanzados](#7--script-mejorado-para-usuarios-avanzados)
 8. [Problemas encontrados y soluciones técnicas](#8--para-usuarios-técnicos-que-quieren-entender-las-posibles-causas-y-el-porqué)
 9. [Monitoreo y mantenimiento](#9--monitoreo-y-mantenimiento)
 10. [Preguntas frecuentes](#10--preguntas-frecuentes)
@@ -99,7 +99,7 @@ macOS → WireGuard → Proton VPN → Script Python → Port Forwarding Activo
 ```
 
 Sigue EXACTAMENTE estos pasos de la **[guía oficial de Proton VPN](https://protonvpn.com/support/port-forwarding-manual-setup/)**:
-
+si usas el install.sh hace estos pasos automáticamente y luego solo debes usar el script simple o avanzado
 ### Paso 1: Descargar el instalador de pip
 
 ```bash
@@ -266,12 +266,12 @@ interrupciones de conexión, es posible que cambie), deberás actualizarlo manua
 
 ---
 
-## 7. 🚀 SCRIPT MEJORADO PARA USUARIOS AVANZADOS
+## 7. 🚀 SCRIPT SIMPLE MEJORADO PARA USUARIOS AVANZADOS
 
 > **Nota:** Para quienes desean más funcionalidades (logging, estadísticas, etc.), aquí está mi script mejorado.
 
 <details>
-<summary><b>🛠️ HAZ CLIC PARA VER CARACTERÍSTICAS DEL SCRIPT AVANZADO</b></summary>
+<summary><b>🛠️ HAZ CLIC PARA VER CARACTERÍSTICAS DEL SCRIPT SIMPLE AVANZADO</b></summary>
 
 - 📊 **Logging completo** en archivo `~/port_forwarding.log`
 - 📈 **Estadísticas** de éxitos, errores y desconexiones
@@ -283,18 +283,18 @@ interrupciones de conexión, es posible que cambie), deberás actualizarlo manua
 </details>
 
 <details>
-<summary><b>🔧 HAZ CLIC PARA VER CÓMO USAR EL SCRIPT AVANZADO - GUÍA PARA PRINCIPIANTES PASO A PASO COMPLETO</b></summary>
+<summary><b>🔧 HAZ CLIC PARA VER CÓMO USAR EL SCRIPT SIMPLE AVANZADO - GUÍA PARA PRINCIPIANTES PASO A PASO COMPLETO</b></summary>
 
 1. **Crear el archivo del script:**
    
    Escribe exactamente esto y presiona Enter:
    ```bash
-   nano ~/vpn_advanced.sh
+   nano ~/protonvpn-portfw-simple.sh
    ```
    Se abrirá el editor de texto Nano dentro de la Terminal.
 
 2. **Pegar el código del script:**
-   - Ve al **Script Avanzado** (está en la próxima sección) y cópialo TODO (desde `#!/bin/bash` hasta el final)
+   - Ve al **Script Simple Avanzado (lo puedes conseguir en Scripts)** (está en la próxima sección) y cópialo TODO (desde `#!/bin/bash` hasta el final)
    - Vuelve a la Terminal
    - Haz clic derecho → Pegar, o presiona **⌘+V**
    - Deberías ver todo el código pegado en Nano
@@ -310,7 +310,7 @@ interrupciones de conexión, es posible que cambie), deberás actualizarlo manua
    
    Escribe esto y presiona Enter:
    ```bash
-   chmod +x ~/vpn_advanced.sh
+   chmod +x ~/protonvpn-portfw-simple.sh
    ```
    No verás mensaje de confirmación (es normal).
 
@@ -318,7 +318,7 @@ interrupciones de conexión, es posible que cambie), deberás actualizarlo manua
    
    Escribe esto y presiona Enter:
    ```bash
-   ~/vpn_advanced.sh
+   ~/protonvpn-portfw-simple.sh
    ```
    ✅ Deberías ver los mensajes del script funcionando.
    ⚠️ No cierres esta ventana de Terminal.
@@ -327,7 +327,7 @@ interrupciones de conexión, es posible que cambie), deberás actualizarlo manua
    
    Si prefieres que la Terminal no esté visible:
    ```bash
-   nohup ~/vpn_advanced.sh > /dev/null 2>&1 &
+   nohup ~/protonvpn-portfw-simple.sh > /dev/null 2>&1 &
    ```
    ✅ El script sigue corriendo aunque cierres Terminal.
    🔍 Para ver los logs después: 
@@ -343,18 +343,18 @@ interrupciones de conexión, es posible que cambie), deberás actualizarlo manua
 </details>
 
 <details>
-<summary><b>🛠️ HAZ CLIC PARA VER EL SCRIPT AVANZADO</b></summary>
+<summary><b>🛠️ HAZ CLIC PARA VER EL SCRIPT SIMPLE AVANZADO</b></summary>
 
 ```bash
 #!/bin/bash
 
 # ============================================
-# PORT FORWARDING PROTON VPN - SCRIPT AVANZADO
+# PORT FORWARDING PROTON VPN - SCRIPT SIMPLE AVANZADO
 # Incluye logging, estadísticas y mejor manejo de errores
 # ============================================
 
 echo "========================================"
-echo "🚀 PORT FORWARDING AVANZADO - PROTON VPN"
+echo "🚀 PORT FORWARDING SIMPLE AVANZADO - PROTON VPN"
 echo "========================================"
 
 # CONFIGURACIÓN
@@ -437,7 +437,7 @@ done
 <summary><b>🔍 HAZ CLIC PARA VER LOS ARCHIVOS Y FUNCIONES DEL SCRIPT</b></summary>
 
 ### 🎯 PROPÓSITO PRINCIPAL:
-Este script mantiene activo el Port Forwarding de forma automática, manejando errores y desconexiones sin intervención manual.
+Este script mantiene activo el Port Forwarding de forma automática, manejando errores y desconexiones sin intervención manual, pero no cambia el puerto automáticamente en el cliente qbittorrent.
 
 ### 📂 ARCHIVOS QUE CREA:
 
@@ -671,7 +671,7 @@ ps aux | grep vpn_advanced
 - 💥 **Errores Python:** py-natpmp no instalado correctamente
 - 🔒 **Permisos denegados:** Script sin permisos de ejecución
 
-### 🔄 SI EL SCRIPT AVANZADO FALLA:
+### 🔄 SI EL SCRIPT SIMPLE AVANZADO FALLA:
 
 1. Primero detén cualquier script con **Ctrl+C**
 2. Vuelve al **Comando Simple** de la sección 5 (siempre funciona)
@@ -792,11 +792,11 @@ Sí, porque estás detrás de la VPN de Proton. No expones tu IP real, solo la d
 
 ### **• Para la mayoría:** Usa el **comando simple corregido** (sección 5)
 
-### **• Para power users:** Usa el **script avanzado** (sección 7)
+### **• Para power users:** Usa el **script simple avanzado y si quieres extra usa el avanzado** (sección 7)
 
-### **• Importante:** Actualiza manualmente el puerto en qBittorrent cuando cambie
+### **• Importante:** Actualiza manualmente el puerto en qBittorrent cuando cambie su usa el script simple avanzado con el script avanzado lo hace automáticamente.
 
-### **• Recordatorio:** Deja Terminal abierta o usa `nohup ~/vpn_advanced.sh > /dev/null 2>&1 &` para segundo plano (sección 7)
+### **• Recordatorio:** Deja Terminal abierta o usa `nohup ~/protonvpn-portfw-simple.sh > /dev/null 2>&1 &` para segundo plano (sección 7)
 
 ---
 
