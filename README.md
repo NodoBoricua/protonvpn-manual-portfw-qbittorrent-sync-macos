@@ -158,7 +158,7 @@ open ~/vpn_dashboard.html
 
 | Script | Descripción | Uso |
 |--------|-------------|-----|
-| `protonvpn_portfw_simple.sh` | Script simple con funcionalidades basica pero no actualiza automaticamente el puerto | `./scripts/pprotonvpn_portfw_simple.sh` |
+| `protonvpn_portfw_simple.sh` | Script simple con funcionalidades basica pero no actualiza automaticamente el puerto | `./scripts/protonvpn_portfw_simple.sh` |
 | `protonvpn_portfw_advanced.sh` | Script principal con todas las funcionalidades | `./scripts/protonvpn_portfw_advanced.sh` |
 | `update_qbittorrent.sh` | Actualiza puerto en qBittorrent (manual/automático) | `./scripts/update_qbittorrent.sh <puerto> [instancia]` |
 | `generate_dashboard.sh` | Genera dashboard HTML con métricas | Ejecutado automáticamente |
