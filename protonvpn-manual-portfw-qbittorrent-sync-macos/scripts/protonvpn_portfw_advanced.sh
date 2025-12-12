@@ -16,7 +16,7 @@ LOG_FILE="$HOME/port_forwarding.log"
 HISTORY_FILE="$HOME/vpn_port_history.log"
 SESSION_LOG="/tmp/current_session.log"
 PORT_FILE="/tmp/current_vpn_port.txt"
-DASHBOARD_SCRIPT="$HOME/create_dashboard_fixed.sh"
+DASHBOARD_SCRIPT="$HOME/generate_dashboard.sh"
 
 # Limpiar archivos de sesión al iniciar
 > "$SESSION_LOG"
@@ -228,7 +228,7 @@ if [ ! -f "$HISTORY_FILE" ]; then
     {
         echo "# ==========================================="
         echo "# HISTORIAL DE CAMBIOS DE PUERTO"
-        echo "# Script: proton_avanzado_final.sh"
+        echo "# Script: protonvpn_portfw_vanzado.sh"
         echo "# Iniciado: $(date '+%Y-%m-%d %H:%M:%S')"
         echo "# VPN Gateway: $VPN_GATEWAY"
         echo "# ==========================================="
