@@ -160,7 +160,7 @@ open ~/vpn_dashboard.html
 |--------|-------------|-----|
 | `protonvpn_portfw_simple.sh` | Script simple con funcionalidades basica pero no actualiza automaticamente el puerto | `./scripts/protonvpn_portfw_simple.sh` |
 | `protonvpn_portfw_advanced.sh` | Script principal con todas las funcionalidades | `./scripts/protonvpn_portfw_advanced.sh` |
-| `update_qbittorrent.sh` | Actualiza puerto en qBittorrent (manual/automático) | `./scripts/update_qbittorrent.sh <puerto> [instancia]` |
+| `update_qbittorrent.sh` | Actualiza puerto en qBittorrent (automático) | `./scripts/update_qbittorrent.sh <puerto> [instancia]` |
 | `generate_dashboard.sh` | Genera dashboard HTML con métricas | Ejecutado automáticamente |
 
 ### Archivos generados
@@ -172,12 +172,12 @@ open ~/vpn_dashboard.html
 - `/tmp/current_session.log` - Log de la sesión actual
 - `/tmp/vpn_current_stats.txt` - Estadísticas sincronizadas
 
-El script detecta automáticamente:
+El script detecta automáticamente (activar web UI en cliente qbittorrent):
 - ✅ Qué instancia de qBittorrent está activa (privada en puerto 8081 o pública en 8080)
 - ✅ Sincroniza el puerto automáticamente al detectar cambios
 - ✅ Verifica discrepancias cada 5 minutos y corrige automáticamente
 
-**Instancias soportadas:**
+**Instancias soportadas (activar web UI en qbittorrent):**
 - 🔒 **Privada**: Puerto WebUI 8081 (usuario: `admin`, pass: `adminadmin`)
 - 🌐 **Pública**: Puerto WebUI 8080 (usuario: `admin`, pass: `adminadmin`)
 
@@ -211,7 +211,7 @@ El script detecta automáticamente:
 - Espera 1-2 minutos después de cambiar el puerto
 - El script avanzado reanuncia torrents automáticamente
 - Verifica que el puerto en qBittorrent coincida con el de la Terminal
-
+- Si no se tiene conexion entrante ni saliente se queda en estado firewalled (llama de fuego color amarilla)
 ### Dashboard no se actualiza
 
 **Verificar:**
